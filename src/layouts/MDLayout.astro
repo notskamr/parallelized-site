@@ -1,0 +1,61 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<style is:inline>
+  a {
+    transition: color 0.15s;
+  }
+  a:hover {
+    color: rgb(37 99 235);
+  }
+  .dark a:hover {
+    color: rgb(251 146 60);
+  }
+  #table-of-contents {
+    margin-bottom: 0;
+  }
+</style>
+<Layout title={title} bodyClass="overflow-x-hidden min-h-screen flex flex-col">
+  <div
+    class="font-mono dark:bg-gray-900 transition-colors duration-500 min-w-screen supports-[width:1dvw]:w-[100dvw] flex justify-items-center items-center flex-col p-8 print:p-0"
+  >
+    <a
+      class="text-black dark:noprint:text-white flex flex-col items-center justify-center hover:-translate-y-1
+                hover:text-blue-600 dark:hover:text-orange-400 duration-500 transition-all mb-8"
+      href="/"
+    >
+      <!-- <img src="/assets/parallelized-svg1.1.svg" width="1280" height="217" alt="Themed parallellized logo" class="w-[300px] h-auto"/> -->
+      <div class="text-[min(8vw,2.25rem)] text-center font-medium no-underline">
+        <span class="inline no-underline">|parallelized|</span>
+      </div>
+      <span class="print:hidden underline underline-offset-2"
+        >return to home</span
+      >
+    </a>
+    <div
+      class="w-[100%] !max-w-[800px] print:w-full print:max-w-none prose dark:noprint:prose-invert transition-colors duration-500
+                flex flex-col"
+    >
+      <slot />
+    </div>
+  </div>
+  <footer
+    id="webfooter"
+    class="mt-auto mb-1 mx-auto text-center prose print:hidden dark:prose-invert opacity-50"
+  >
+    parallelized @ shriteq 2023
+    <span class="hidden sm:inline">
+      <!-- | created with
+      <a class="opacity-80" href="https://www.11ty.dev/">11ty</a>
+       by varun sahni</span
+    > -->
+    </span>
+  </footer>
+</Layout>

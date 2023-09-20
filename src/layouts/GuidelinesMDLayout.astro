@@ -1,0 +1,26 @@
+---
+import MDLayout from "./MDLayout.astro";
+
+export const prerender = false;
+
+interface Props {
+  title: string;
+}
+
+const res = await fetch("https://api.npoint.io/6dc2ce25ac357f85839d");
+const data = await res.json();
+const { title } = Astro.props;
+---
+
+<MDLayout title={title}>
+  {
+    data.guidelinesEnabled ? (
+      <slot />
+    ) : (
+      <p class="text-center text-2xl pt-8">
+        Guidelines are currently disabled! They will be released when the event
+        starts.
+      </p>
+    )
+  }
+</MDLayout>

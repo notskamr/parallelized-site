@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  bodyClass?: string;
+}
+
+import "../base.css";
+import { ViewTransitions } from "astro:transitions";
+const { title, bodyClass = "" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/parallelized-small.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="crossorigin"
+    />
+    <script is:inline>
+      const setTheme = () => {
+        localStorage.setItem("theme", localStorage.getItem("theme") || "dark");
+        localStorage.getItem("theme") !== "dark" &&
+          document.documentElement.classList.remove("dark");
+      };
+      setTheme();
+      document.addEventListener("astro:after-swap", () => {
+        setTheme();
+      });
+    </script>
+
+    <title>{title}</title>
+    <ViewTransitions />
+    <link
+      href="https://fonts.googleapis.com/css2?family=fira+code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class={"dark:bg-gray-900 transition-colors duration-500 font-mono " +
+      bodyClass}
+  >
+    <slot />
+  </body>
+</html>

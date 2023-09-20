@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "astro-icon";
+---
+
+<Layout title="parallelized">
+  <div
+    class="min-w-[100dvw] min-h-[87dvh] flex flex-col justify-center items-center prose dark:noprint:prose-invert"
+  >
+    <button
+      type="button"
+      role="switch"
+      aria-label="Toggle Theme"
+      transition:persist
+      class="theme-toggle text-black dark:text-white overflow-hidden flex flex-row items-center duration-500 transition-[border] justify-center print:hidden w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-md bg-transparent border-2 border-black dark:border-white"
+    >
+      <div
+        class="h-[72px] md:h-[80px] w-full flex flex-col relative top-[18px] md:top-[20px] transition-all duration-500 translate-y-[-36px] md:translate-y-[-40px] dark:translate-y-[0]"
+      >
+        <div class="w-full h-[36px] md:h-[40px] p-1">
+          <Icon name="ic:outline-dark-mode" />
+        </div>
+        <div class="w-full h-[36px] md:h-[40px] p-1">
+          <Icon name="ic:outline-light-mode" />
+        </div>
+      </div>
+    </button>
+    <!-- <img src="/assets/parallelized-svg1.1.svg" width="1280" height="217" class="w-[90%] sm:w-[40%] invert dark:noprint:invert-0 h-auto mb-8" alt="Themed parallellized logo"/> -->
+    <div
+      class="text-black dark:text-white text-[min(11vw,4.5rem)] text-center font-medium mb-[2vh] mt-[1.5vh] duration-500"
+    >
+      <span class="inline">|parallelized|</span>
+    </div>
+    <!-- <div class="mb-8">shriteq 2023</div> -->
+    <div
+      class="w-[90%] sm:w-[40%] flex justify-items-center justify-evenly items-center"
+    >
+      <a
+        href="/what-and-why"
+        class="!no-underline text-sm md:text-base px-4 py-2 bg-[#69f269] text-center w-[140px] dark:bg-[#ec6868] transition-all duration-500
+        hover:scale-105 hover:saturate-150 hover:-translate-y-1 justify-self-start"
+      >
+        what/why</a
+      >
+      <a
+        href="/guidelines"
+        class="!no-underline text-sm md:text-base px-4 py-2 text-center w-[140px] bg-[#f39cfd] dark:bg-[#ff8a4b] transition-all duration-500
+        hover:scale-105 hover:saturate-150 hover:-translate-y-1 justify-self-end"
+      >
+        guidelines</a
+      >
+    </div>
+    <footer class="absolute bottom-1 text-center opacity-50">
+      parallelized @ shriteq 2023
+    </footer>
+  </div>
+  <script is:inline>
+    document.addEventListener(
+      "astro:page-load",
+      () => {
+        const toggle = document.querySelector(".theme-toggle");
+        if (localStorage.getItem("theme") === "light") {
+          toggle.checked = true;
+          toggle.setAttribute("aria-checked", "true");
+        } else {
+          toggle.checked = false;
+          toggle.setAttribute("aria-checked", "false");
+        }
+        toggle.onclick = (e) => {
+          let newTheme =
+            localStorage.getItem("theme") === "light" ? "dark" : "light";
+          localStorage.setItem("theme", newTheme);
+          toggle.setAttribute("aria-checked", newTheme);
+          document.documentElement.classList.toggle("dark");
+        };
+      },
+      { once: true }
+    );
+  </script>
+  <style></style>
+</Layout>

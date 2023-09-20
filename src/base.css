@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+::selection {
+    background: rgb(246, 156, 91);
+  }
+
+  .dark ::selection {
+    background: rgb(159, 8, 71);
+  }
+
+  ::-moz-selection {
+    background: rgb(246, 156, 91);
+  }
+
+  .dark ::-moz-selection {
+    background: rgb(159, 8, 71);
+  }
