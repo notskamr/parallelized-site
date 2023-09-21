@@ -36,7 +36,7 @@ const { title, bodyClass = "" } = Astro.props;
     </script>
 
     <title>{title}</title>
-    <ViewTransitions />
+    <ViewTransitions fallback="none" />
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
