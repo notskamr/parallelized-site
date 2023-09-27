@@ -16,15 +16,7 @@ export default defineConfig({
     mdx(),
   ],
   output: "hybrid",
-  adapter: vercel({
-    // Vercel-specific options here
-    speedInsights: {
-      enabled: true,
-    },
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
+  adapter: vercel(),
   markdown: {
     remarkPlugins: [remarkToc],
   },
