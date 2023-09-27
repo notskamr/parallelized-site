@@ -15,7 +15,7 @@ export default defineConfig({
     }),
     mdx(),
   ],
-  output: "server",
+  output: "hybrid",
   adapter: vercel({
     // Vercel-specific options here
     speedInsights: {
