@@ -41,7 +41,19 @@ const { title, bodyClass = "" } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-  </head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHE6RR412"
+    ></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-BDHE6RR412");
+    </script></head
+  >
+  <!-- Google tag (gtag.js) -->
+
   <body
     class={"dark:bg-gray-900 transition-colors duration-500 font-mono " +
       bodyClass}
