@@ -33,14 +33,16 @@ const { title } = Astro.props;
     >
       <!-- <img src="/assets/parallelized-svg1.1.svg" width="1280" height="217" alt="Themed parallellized logo" class="w-[300px] h-auto"/> -->
       <div class="text-[min(8vw,2.25rem)] text-center font-medium no-underline">
-        <span class="inline no-underline">|parallelized|</span>
+        <span class="inline no-underline" transition:name="parallelized-text"
+          >|parallelized|</span
+        >
       </div>
       <span class="print:hidden underline underline-offset-2"
         >return to home</span
       >
     </a>
     <div
-      class="w-[100%] !max-w-[800px] print:w-full print:max-w-none prose dark:noprint:prose-invert transition-colors duration-500
+      class="w-[100%] !max-w-[800px] print:w-full print:max-w-none prose prose-h2:mt-2 prose-h2:mb-2 dark:noprint:prose-invert transition-colors duration-500
                 flex flex-col"
     >
       <slot />
