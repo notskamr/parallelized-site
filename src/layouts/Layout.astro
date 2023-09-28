@@ -22,6 +22,11 @@ const { title, bodyClass = "" } = Astro.props;
       href="https://fonts.gstatic.com"
       crossorigin="crossorigin"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="preload"
+      as="style"
+    />
     <script is:inline>
       const setTheme = () => {
         localStorage.setItem("theme", localStorage.getItem("theme") || "dark");
