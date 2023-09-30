@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        xs: "320px",
         print: { raw: "print" },
         noprint: { raw: "not print" },
       },

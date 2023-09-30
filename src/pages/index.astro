@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 import EmptyWrapper from "../components/EmptyWrapper.astro";
+import FooterInner from "../components/FooterInner.astro";
 
 import Icon from "astro-icon";
 ---
@@ -71,7 +72,7 @@ import Icon from "astro-icon";
       >
     </div>
     <footer class="absolute bottom-1 text-center opacity-50 duration-500">
-      parallelized @ shriteq 2023
+      <FooterInner />
     </footer>
   </div>
   <script is:inline>
