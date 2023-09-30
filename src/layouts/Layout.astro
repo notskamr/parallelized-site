@@ -32,7 +32,14 @@ const { title, bodyClass = "" } = Astro.props;
     />
     <script is:inline>
       const setTheme = () => {
-        localStorage.setItem("theme", localStorage.getItem("theme") || "dark");
+        localStorage.setItem(
+          "theme",
+          localStorage.getItem("theme")
+            ? localStorage.getItem("theme")
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light"
+        );
         localStorage.getItem("theme") !== "dark" &&
           document.documentElement.classList.remove("dark");
       };
