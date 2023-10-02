@@ -3,11 +3,7 @@ import Layout from "./Layout.astro";
 
 import FooterInner from "../components/FooterInner.astro";
 
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <style is:inline>
@@ -24,7 +20,10 @@ const { title } = Astro.props;
     margin-bottom: 0;
   }
 </style>
-<Layout title={title} bodyClass="overflow-x-hidden min-h-screen flex flex-col">
+<Layout
+  title={frontmatter.title}
+  bodyClass="overflow-x-hidden min-h-screen flex flex-col"
+>
   <div
     class="font-mono dark:bg-gray-900 transition-colors duration-500 min-w-screen supports-[width:1dvw]:w-[100dvw] flex justify-items-center items-center flex-col px-2 p-4 xs:px-8 xs:p-8 print:p-0"
   >
