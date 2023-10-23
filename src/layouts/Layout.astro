@@ -31,41 +31,44 @@ const { title, bodyClass = "" } = Astro.props;
       as="style"
     />
     <script is:inline>
-      const setTheme = () => {
-        localStorage.setItem(
-          "theme",
-          localStorage.getItem("theme")
-            ? localStorage.getItem("theme")
-            : window.matchMedia("(prefers-color-scheme: dark)").matches
+    const setTheme = () => {
+      localStorage.setItem(
+        "theme",
+        localStorage.getItem("theme")
+          ? localStorage.getItem("theme")
+          : window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
             : "light"
-        );
-        localStorage.getItem("theme") !== "dark" &&
-          document.documentElement.classList.remove("dark");
-      };
+      );
+      localStorage.getItem("theme") !== "dark" &&
+        document.documentElement.classList.remove("dark");
+    };
+    setTheme();
+    document.addEventListener("astro:after-swap", () => {
       setTheme();
-      document.addEventListener("astro:after-swap", () => {
-        setTheme();
-      });
+    });
     </script>
 
     <title>{title}</title>
-    <ViewTransitions fallback="none" />
+    <ViewTransitions fallback="swap" />
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHE6RR412"
-    ></script><script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BDHE6RR412"></script>
+    <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-      gtag("config", "G-BDHE6RR412");
-    </script></head
-  >
+    gtag("config", "G-BDHE6RR412");
+    </script>
+  </head>
   <!-- Google tag (gtag.js) -->
 
   <body
