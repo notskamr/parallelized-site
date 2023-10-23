@@ -76,29 +76,26 @@ import Icon from "astro-icon";
     </footer>
   </div>
   <script is:inline>
-    function initThemeToggle() {
-      const toggle = document.querySelector(".theme-toggle");
-      if (localStorage.getItem("theme") === "light") {
-        toggle.checked = true;
-        toggle.setAttribute("aria-checked", "true");
-      } else {
-        toggle.checked = false;
-        toggle.setAttribute("aria-checked", "false");
-      }
-      toggle.onclick = (e) => {
-        let newTheme =
-          localStorage.getItem("theme") === "light" ? "dark" : "light";
-        localStorage.setItem("theme", newTheme);
-        toggle.setAttribute("aria-checked", newTheme);
-        document.documentElement.classList.toggle("dark");
-      };
+  function initThemeToggle() {
+    const toggle = document.querySelector(".theme-toggle");
+    if (localStorage.getItem("theme") === "light") {
+      toggle.checked = true;
+      toggle.setAttribute("aria-checked", "true");
+    } else {
+      toggle.checked = false;
+      toggle.setAttribute("aria-checked", "false");
     }
-
-    initThemeToggle();
-
-    document.addEventListener("astro:page-load", initThemeToggle, {
-      once: true,
-    });
+    toggle.onclick = (e) => {
+      let newTheme =
+        localStorage.getItem("theme") === "light" ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      toggle.setAttribute("aria-checked", newTheme);
+      document.documentElement.classList.toggle("dark");
+    };
+  }
+  document.addEventListener("astro:page-load", initThemeToggle, {
+    once: true,
+  });
   </script>
   <style></style>
 </Layout>
