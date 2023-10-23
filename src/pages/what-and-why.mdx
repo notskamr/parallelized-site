@@ -3,7 +3,7 @@ title: "what/why - parallelized"
 layout: "../layouts/MDLayout.astro"
 ---
 
-import EmptyWrapper from "../components/EmptyWrapper.astro"
+import EmptyWrapper from "../components/EmptyWrapper.astro";
 
 <EmptyWrapper slot="headTop">
   <meta name="title" content="what/why - parallelized" />
@@ -20,24 +20,40 @@ import EmptyWrapper from "../components/EmptyWrapper.astro"
   <meta name="language" content="English" />
 </EmptyWrapper>
 
-
 ## what is _parallelized?_
+
 <span class="child:!mb-0 child:!mt-0">
-*parallelized* is a code optimization competition (by The Shri Ram School, Moulsari for the premier tech event, ShriTeq) where you optimize code in a way that your **software** can actually take advantage of the **hardware**.
-Teams compete to achieve the maximum possible speedup (over a very naive staff implementation) within three hours, offline! There are teams of two and whichever team
-achieves the highest speed-up multiple, wins.
+  *parallelized* is a code optimization competition (by The Shri Ram School,
+  Moulsari for the premier tech event, ShriTeq) where you optimize code in a way
+  that your **software** can actually take advantage of the **hardware**. Teams
+  compete to achieve the maximum possible speedup (over a very naive staff
+  implementation) within three hours! There are teams of two and whichever team
+  achieves the highest speed-up multiple, wins.
 </span>
 
 - Each team is assigned the same tasks and must complete all tasks
-- Teams must first develop the tasks themselves and then optimize them to achieve the highest speedup multiple *(in Python)*
+- Teams must first develop the tasks themselves and then optimize them to achieve the highest speedup multiple _(in Python)_
 - All problem guidelines must be followed and all tasks must be completed
 - The guidelines contain details about the elements of the program that must be implemented for correctness (eg. required functions, classes)
-  - <p class="!text-xs">&gt;= **Note:** Local tests check for correctness and speedup.
-  However, the speedup multiple may not be indicative of the speedup used for scoring 
-  due to discrepancies in the hardware used for testing and your systems - thus, it is better if you use the local speedup as a gauge for performance.</p>
+  - <p class="!text-xs">
+      &gt;= **Note:** Local tests check for correctness and speedup. However,
+      the speedup multiple may not be indicative of the speedup used for scoring
+      due to discrepancies in the hardware used for testing and your systems -
+      thus, it is better if you use the local speedup as a gauge for
+      performance.
+    </p>
 
 ## why _parallelized?_
-<span class="child:!mb-0 child:!mt-0">With Moore's law slowing down, the need for speed within systems is greater than ever. This requires us to focus on code optimization and parallelism. Harnessing parallelism through techniques like multithreading, multiprocessing, and vector-based operations is crucial for performance gains. However, Amdahl's Law can limit speedup by preventing the parallelization of serial code elements. Thus, efficient code optimization, utilizing elements like caching and virtual memory, is also essential.</span>
+
+<span class="child:!mb-0 child:!mt-0">
+  With Moore's law slowing down, the need for speed within systems is greater
+  than ever. This requires us to focus on code optimization and parallelism.
+  Harnessing parallelism through techniques like multithreading,
+  multiprocessing, and vector-based operations is crucial for performance gains.
+  However, Amdahl's Law can limit speedup by preventing the parallelization of
+  serial code elements. Thus, efficient code optimization, utilizing elements
+  like caching and virtual memory, is also essential.
+</span>
 
 Enter _parallelized_, a 3-hour challenge to achieve maximum speedup in an application.
 
