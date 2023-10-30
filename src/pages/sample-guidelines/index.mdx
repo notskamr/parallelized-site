@@ -11,10 +11,7 @@ that was not standardized. The company understands that doing such a task themse
 taken to do it themselves. They have hired you, along with a team of other developers, to create a stop-gap solution for the time being by using a
 hybrid approach.
 
-They plan to expose an API that uses the CSV's themselves as a database in a monolithic approach so that server uptime is not affected while the large amount of data transfer is done.
-Using CSV files is conventionally extremely inefficient as you would be using the disk to read/write which would be much slower (if you are interested, look into Amdahl's Law - basically, I/O bound tasks are sequential so cannot be sped up without changes to the hardware).
-Thus, to combat this you plan to use a dictionary to act as an associative cache for the CSV data that would be important to keep on hand (such as data for ongoing projects). This dictionary would be stored in memory,
-thus we can improve our I/O times for a lot of the operations.
+They plan to expose an API that leverages the CSV files as a database to ensure server uptime remains unaffected during extensive data transfers. Utilizing CSV files conventionally proves highly inefficient since it involves disk-based read/write operations, which are considerably slower. (For further insights, consider examining Amdahl's Law, which essentially underscores that I/O-bound tasks are inherently sequential and challenging to accelerate without hardware modifications.) To address this inefficiency, the plan is to implement a dictionary as an associative cache for vital CSV data, particularly data related to ongoing projects. This dictionary will be stored in memory, thereby enhancing I/O performance for many operations.
 
 <div>_*Please note this is a shorter sample prompt that just aims to show you what a prompt would look like*_</div><br></br>
 ## Task 1: Understanding the Problem
