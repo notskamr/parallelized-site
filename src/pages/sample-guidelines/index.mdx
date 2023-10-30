@@ -18,9 +18,9 @@ They plan to expose an API that leverages the CSV files as a database to ensure 
 Let's take a look at a table visualization of what the data in one of the CSV's looks like:
 | id | date | manager | tasks_csv_path | expected_cost | expected_payment |  ongoing | ... | 
 | --- | ----- | ------------ | -------- | ------------- | ---------------- | ----- | ----- |
-| 43 | 2008-12-13 | Lempel | https://website.com/assets/csvs/2008-12-13/tasks-43.csv | $32039.93 | $40940.00 | false| |
-| 78 | 2009-02-17 | Welch | https://website.com/assets/csvs/2008-02-17/tasks-78.csv | $38731.04 | $41500.00 | false |  |
-| 126 | 2023-09-28 | Ziv | https://website.com/assets/csvs/2023-09-28/tasks-126.csv | $63040.49 | $79000.00 | true | |
+| 43 | 2008-12-13 | Lempel | website.com/assets/csvs/2008-12-13/tasks-43.csv | $32039.93 | $40940.00 | false| |
+| 78 | 2009-02-17 | Welch | website.com/assets/csvs/2008-02-17/tasks-78.csv | $38731.04 | $41500.00 | false |  |
+| 126 | 2023-09-28 | Ziv | website.com/assets/csvs/2023-09-28/tasks-126.csv | $63040.49 | $79000.00 | true | |
 
 Our job is to essentially abstract away these details into *three functions*:
 <div class="child:py-0 child:my-0">
