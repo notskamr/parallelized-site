@@ -14,7 +14,7 @@ hybrid approach.
 They plan to expose an API that leverages the CSV files as a database to ensure server uptime remains unaffected during extensive data transfers. Utilizing CSV files conventionally proves highly inefficient since it involves disk-based read/write operations, which are considerably slower. (For further insights, consider examining Amdahl's Law, which essentially underscores that I/O-bound tasks are inherently sequential and challenging to accelerate without hardware modifications.) To address this inefficiency, the plan is to implement a dictionary as an associative cache for vital CSV data, particularly data related to ongoing projects. This dictionary will be stored in memory, thereby enhancing I/O performance for many operations.
 
 <div>_*Please note this is a shorter sample prompt that just aims to show you what a prompt would look like*_</div><br></br>
-## Task 1: Understanding the Problem
+## Understanding the Problem
 Let's take a look at a table visualization of what the data in one of the CSV's looks like:
 | id | date | manager | tasks_csv_path | expected_cost | expected_payment |  ongoing | ... | 
 | --- | ----- | ------------ | -------- | ------------- | ---------------- | ----- | ----- |
