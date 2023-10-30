@@ -31,7 +31,7 @@ Our job is to essentially abstract away these details into *three functions*:
     - If not in the cache, get details from the CSV
     - Add or remove from the cache with `cache_fields`
 3. cache_fields
-- Here, a choice needs to be made on what method to implement for adding and removing elements from the "cache". A common policy for this is least-recently-used (or LRU). But, in this case, we expect that these projects won't be accessed again and the spatial and temporal locality from LRU may not be very useful. Maybe it's smarter to use a mostly static cache and for ongoing projects.
+- Here, a choice needs to be made on what method to implement for adding and removing elements from the "cache". A common policy for this is least-recently-used (or LRU). But, in this case, we expect that these projects won't be accessed frequently, so the spatial and temporal locality from LRU may not be very useful. Maybe it's smarter to use a mostly static cache with a priority for ongoing projects.
 </div>
 
 <br></br>
