@@ -65,10 +65,25 @@ import Icon from "astro-icon";
       >
       <a
         href="/guidelines"
-        class="!no-underline text-sm md:text-base px-4 py-2 text-center w-[140px] bg-[#f39cfd] dark:bg-[#ff8a4b] transition-all duration-500
-        hover:scale-105 hover:saturate-150 hover:-translate-y-1 justify-self-end"
+        class="!no-underline text-sm md:text-base px-4 py-2 flex justify-center items-center text-center w-[140px] bg-[#f39cfd7f] dark:bg-[#ff8a4b7f] transition-all duration-500
+        hover:scale-105 hover:saturate-150 hover:-translate-y-1 justify-self-end text-opacity-25"
       >
-        guidelines</a
+        guidelines<div
+          class="absolute text-lg -rotate-12 text-yellow-400 drop-shadow-[0px_1px_4px_#000] underline"
+        >
+          locked
+        </div></a
+      >
+    </div>
+    <div
+      class="w-[90%] sm:w-[40%] flex justify-items-center justify-center items-center mt-[3vh]"
+    >
+      <a
+        href="/guidelines"
+        class="!no-underline text-sm md:text-base px-6 py-2 text-center bg-black dark:bg-white text-white dark:text-black transition-all duration-500
+      hover:scale-105 hover:saturate-150 hover:-translate-y-1 justify-self-end"
+      >
+        sample guidelines</a
       >
     </div>
     <footer class="absolute bottom-1 text-center opacity-50">
