@@ -16,11 +16,16 @@ They plan to expose an API that leverages the CSV files as a database to ensure 
 <div>_*Please note this is a shorter sample prompt that just aims to show you what a prompt would look like*_</div><br></br>
 ## Understanding the Problem
 Let's take a look at a table visualization of what the data in one of the CSV's looks like:
+<div id="tableCapture" class="hidden md:block">
 | id | date | manager | tasks_csv_path | expected_cost | expected_payment |  ongoing | ... | 
 | --- | ----- | ------------ | -------- | ------------- | ---------------- | ----- | ----- |
 | 43 | 2008-12-13 | Lempel | website.com/assets/csvs/2008-12-13/tasks-43.csv | $32039.93 | $40940.00 | false| |
 | 78 | 2009-02-17 | Welch | website.com/assets/csvs/2008-02-17/tasks-78.csv | $38731.04 | $41500.00 | false |  |
 | 126 | 2023-09-28 | Ziv | website.com/assets/csvs/2023-09-28/tasks-126.csv | $63040.49 | $79000.00 | true | |
+</div>
+<div class="block md:hidden my-0 py-0 child:my-0" aria-hidden="true">
+_The table cannot be displayed on screens with less width: please either try flipping your screen or accessing it from Desktop._
+</div>
 
 Our job is to essentially abstract away these details into *three functions*:
 <div class="child:py-0 child:my-0">
