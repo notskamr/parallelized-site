@@ -81,7 +81,32 @@ An additional bonus is given as a portion of their total costs for the quarter (
 ## Task 8: Implement 'insert_analysis_row'
 Will be released soon.
 
-{/* ## Time Yourself */}
+## Time Yourself
+You can time yourself and your implementations with the in-built Python library `time`. Here's an example that times calculate_bonus for a certain driver.
+```python
+# Let's assume that your implementation of calculate_bonus takes in a driver_id as its only argument, we can time it as below.
+
+# Importing your calculate_bonus function
+from metrics import calculate_bonus
+
+# Importing the required functions from the time library
+from time import time, process_time
+
+# Take start time and CPU time
+start_time = time()
+start_cpu_time = process_time()
+
+# Run the function n times (20 in this case) to account for possible variations in run-by-run time
+for i in range(20):
+    calculate_bonus(123)
+
+# Get ending time and CPU time
+end_time = time()
+end_cpu_time = process_time()
+
+print(f"Time taken: {end_time - start_time}")
+print(f"CPU Time taken: {end_cpu_time - start_cpu_time}")
+```
 
 ## Scoring
 Implementations are based on functionality and speed. You are graded with a 50% weightage toward successful implementations and a 50% weightage towards speedup over a naive staff implementation.
