@@ -51,7 +51,7 @@ This value will be stored.
 This function should analyze why these inefficiencies are occurring in the first place. There are three likely reasons that a driver could be inefficient.
 1. They have a poor average cost/km with a specific vehicle (higher than Rs. 3 for 2-wheelers, higher than Rs. 6 for 3-wheelers, higher than Rs. 15 for 4-wheelers): "HIGHCOST"
 2. They are very slow in terms of average speed across all rides (below 20km/h): "SLOW"
-3. They have faced poor traffic: "TRAFFIC"
+3. They have faced poor traffic (the majority of their rides are 'POOR' or 'VPOOR' - consider a 50/50 split poor): "TRAFFIC"
 You should find which one of these three applies to each driver, and add to a comma-separated string.
 For eg. if a driver is poor average cost/km and poor traffic then it would be "HIGHCOST,TRAFFIC"
 This string will eventually be stored. 
