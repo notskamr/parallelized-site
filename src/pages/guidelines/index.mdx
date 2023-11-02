@@ -41,7 +41,7 @@ Please take a look through the columns of both tables and see what parameters we
 Along the way, you can implement any required helper functions as needed (some have been provided already in `database.py`)
 
 ## Task 1: Implement 'calculate_overall_customer_satisfaction'
-`calculate_overall_custom_satisfaction` should get the average ratings over all rides.
+`calculate_overall_custom_satisfaction` should get the average ratings over all rides for all drivers (average of ratings in the 'rides' table).
 
 ## Task 2: Implement 'calculate_driver_efficiency'
 This function should analyse a driver's overall efficiency based on their average cost/km.
@@ -63,10 +63,11 @@ Loyalty is calculated on a scale of 1 to 5: lowest to highest. It is based on nu
 - Between 300-400: 3
 - Between 400-500: 4
 - Above 500: 5
+
 This will eventually be needed to calculate bonuses.
 
 ## Task 5: Implement 'calculate_paycheck'
-Drivers are paid with a base fee of Rs. 50, and an additional Rs. 10 per kilometer driven. Calculate the total paycheck for each driver. This will eventually be stored.
+Drivers are paid with a base fee of Rs. 50 with Rs. 10 per kilometer driven and Rs. 5 per minute driven. Calculate the total paycheck for each driver. This will eventually be stored.
 
 ## Task 6: Implement 'calculate_bonus'
 Will be released soon.
@@ -78,9 +79,9 @@ Will be released soon.
 Implementations are based on functionality and speed.
 
 <h2 id="readings" class="!mb-2">Readings</h2>
-<h3 id="general" class="!mb-0 !ml-4">General</h3>
 <div class="child:!mb-0 child:!mt-1 child:!ml-6">
 - [Resources](/guidelines/resources "A list of resources for the competition with details about possible libraries for use")
+- [Allowed Tools](/guidelines/allowed-tools "A list of allowed tools")
 </div>
 {/*### Algorithm Implementation {.mt-0 .ml-4 .mb-0}
 - [LZW Compression](lzw-compression "An overview of LZW compression")
