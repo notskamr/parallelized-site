@@ -37,27 +37,27 @@ The SQLite database has two tables: `drivers` and `rides`. Let's go through a fe
 ![Rides](/guidelines/assets/rides.png)
 
 Please take a look through the columns of both tables and see what parameters we have! For today, our job is to implement 
-7 main functions. `calculate_overall_customer_satisfaction`, `calculate_driver_effiency`, `analyse_driver_efficiency`, `calculate_driver_performance`, `calculate_payout`, `calculate_bonus` and `insert_analysis_row`
+7 main functions. `calculate_overall_customer_satisfaction`, `calculate_driver_effiency`, `analyse_driver_efficiency`, `calculate_driver_loyalty`, `calculate_payout`, `calculate_bonus` and `insert_analysis_row`
 Along the way, you can implement any required helper functions as needed (some have been provided already in `database.py`)
 
 ## Task 1: Implement 'calculate_overall_customer_satisfaction'
-`calculate_overall_custom_satisfaction` should get the average ratings over all rides for all drivers (average of ratings in the 'rides' table).
+`calculate_overall_custom_satisfaction` should get the average ratings overall rides for all drivers (average of ratings in the 'rides' table).
 
 ## Task 2: Implement 'calculate_driver_efficiency'
-This function should analyse a driver's overall efficiency based on their average cost/km.
+This function should analyze a driver's overall efficiency based on their average cost/km.
 This value will be stored.
 
 ## Task 3: Implement 'analyse_driver_efficiency'
-This function should analyse why these inefficiencies are occuring in the first place. There are three likely reasons that a driver could be inefficient.
-1. They have a poor average cost/km with a specific vehicle (higher than Rs. 3 for 2 wheelers, higher than Rs. 6 for 3 wheelers, higher than Rs. 15 for 4 wheelers): "HIGHCOST"
+This function should analyze why these inefficiencies are occurring in the first place. There are three likely reasons that a driver could be inefficient.
+1. They have a poor average cost/km with a specific vehicle (higher than Rs. 3 for 2-wheelers, higher than Rs. 6 for 3-wheelers, higher than Rs. 15 for 4-wheelers): "HIGHCOST"
 2. They are very slow in terms of average speed across all rides (below 20km/h): "SLOW"
 3. They have faced poor traffic: "TRAFFIC"
-You should find which one of these three applies to each driver, and add to a comma-seperated string.
+You should find which one of these three applies to each driver, and add to a comma-separated string.
 For eg. if a driver is poor average cost/km and poor traffic then it would be "HIGHCOST,TRAFFIC"
 This string will eventually be stored. 
 
 ## Task 4: Implement 'calculate_driver_loyalty'
-Loyalty is calculated on a scale of 1 to 5: lowest to highest. It is based on number of rides.
+Loyalty is calculated on a scale of 1 to 5: lowest to highest. It is based on the number of rides.
 - Less than 200: 1
 - Between 200-300: 2
 - Between 300-400: 3
@@ -76,7 +76,7 @@ Will be released soon.
 Will be released soon.
 
 ## Scoring
-Implementations are based on functionality and speed.
+Implementations are based on functionality and speed. You are graded with a 50% weightage toward successful implementations and a 50% weightage towards speedup over a naive staff implementation.
 
 <h2 id="readings" class="!mb-2">Readings</h2>
 <div class="child:!mb-0 child:!mt-1 child:!ml-6">
