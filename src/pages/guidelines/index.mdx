@@ -73,13 +73,17 @@ This will eventually be needed to calculate bonuses.
 Drivers are paid with a base fee of Rs. 50 with Rs. 10 per kilometer driven and Rs. 5 per minute driven. Calculate the total paycheck for each driver. This will eventually be stored.
 
 ## Task 7: Implement 'calculate_bonus'
-An additional bonus is given as a portion of their total costs for the quarter (up to a limit of 65% of their costs). It is calculated as per their loyalty, performance, and efficiency.
+An additional bonus is given as a portion of their total costs for the quarter (up to a limit of 65% of their costs). The function should return the bonus value in rupees. It is calculated as per their loyalty, performance, and efficiency.
 1. Loyalty to the percentage of cost added to total bonus &rarr; 5: 30%, 4: 20%, 3: 15%, 2: 2.5%, 1: 0% (Eg. a loyalty of 5 with a total cost of Rs. 1200 means that Rs. 360 is added as a bonus)
 2. Performance &rarr; >=4.5: 20%, >=3: 10%, Else: None
-3. Efficiency &rarr; if 'SLOW' or 'HIGHCOST' are in their analysis, then there is no bonus given. If no inefficiencies, 10% bonus. If there is only high traffic, 5% bonus.
+3. Efficiency &rarr; if 'SLOW' or 'HIGHCOST' are in their analysis, then there is no bonus given. If no inefficiencies, 10% bonus. If there is only high traffic, a 5% bonus.
 
 ## Task 8: Implement 'insert_analysis_row'
-Will be released soon.
+Let's take a look at the below snippet from the table schematic for 'driver_analyses', which is the table which you will work with in this function.
+```sql
+CREATE TABLE IF NOT EXISTS driver_analyses (driver_id INTEGER PRIMARY KEY NOT NULL, averageSpeed REAL NOT NULL, inefficiencyReason TEXT, payout REAL NOT NULL, bonus REAL NOT NULL);
+```
+Go through the fields in this table. Your function should insert a new row into the SQLite table 'driver_analyses'. Pretty straightforward: just a bit of tying stuff together!
 
 ## Time Yourself
 You can time yourself and your implementations with the in-built Python library `time`. Here's an example that times calculate_bonus for a certain driver.
