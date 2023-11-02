@@ -3,20 +3,9 @@ import MDLayout from "./MDLayout.astro";
 
 export const prerender = false;
 
-const res = await fetch("https://api.npoint.io/6dc2ce25ac357f85839d");
-const data = await res.json();
 const { frontmatter } = Astro.props;
 ---
 
 <MDLayout frontmatter={frontmatter}>
-  {
-    data.guidelinesEnabled || import.meta.env.MODE === "development" ? (
-      <slot />
-    ) : (
-      <p class="text-center text-2xl pt-8">
-        Guidelines are currently disabled! They will be released when the event
-        starts.
-      </p>
-    )
-  }
+  <slot />
 </MDLayout>

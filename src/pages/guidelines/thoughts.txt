@@ -1,0 +1,2 @@
+API that gives details driver by driver: you get their past rides for the last 30 days only, and you need to calculate for the quarter.
+SO! multiprocessing could play a big part

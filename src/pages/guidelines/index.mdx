@@ -1,28 +1,72 @@
 ---
-title: 'sample - parallelized'
+title: 'guidelines - parallelized'
 layout: "../../layouts/GuidelinesMDLayout.astro"
 ---
 
 ## Table of Contents
 
 ## Overview
-Your task is to create a library that implements optimized versions of two functions for [Lempel-Ziv-Welch (LZW)](https://en.wikipedia.org/wiki/Lempel–Ziv–Welch) lossless compression and decompression. Before you begin, please go through the pages linked in the [General](#general "General readings") section under Readings (at the bottom of the page).
+You work for a thriving ride-sharing company that connects hundreds of drivers with passengers daily. As part of your role, you need to determine which drivers deserve bonuses based on their performance over the last quarter. To make data-driven decisions in regards to the situation, you need to assess driver efficiency and pinpoint reasons for inefficiencies. Additionally, you want to incorporate a way to automate payout calculations that include bonuses for drivers doing well (in terms of efficiency and ratings). Lastly, you've been asked to find the overall customer satisfaction (average overall ratings across all rides), and which drivers are negative outliers in this regard (very low average ratings).
+## Getting Started
+Pleae clone this repository locally: https://github.com/parallelized/parallelized-starter
 
-## Task 1: Understanding the Problem
-LZW compression is a type of lossless compression that works by
+## Understanding the Problem
+Let's take a look at our file structure!
+```bash
+parallelized-starter/
+│
+├── data/
+│   ├── 2023-11-02.db         # SQLite database containing driver and ride data
+│
+├── src/
+│   ├── main.py                # Main script for data processing
+│   ├── database.py            # Database-related functions for data retrieval and insertion
+│   ├── metrics.py             # Functions for calculating efficiency metrics
+│
+├── results/
+│   ├── efficiency_results.csv  # CSV file to store efficiency metrics results
+```
+We've been given a pretty simple structure - a SQLite database which contains driver data from the last quarter, a main script, and two files for functions needed for the task.
+The SQLite database has two tables: `drivers` and `rides`. Let's go through a few rows of each.
+1. `drivers`
+![Drivers](/guidelines/assets/drivers.png)
 
+2. `rides`
+![Rides](/guidelines/assets/rides.png)
 
+Please take a look through the columns of both tables and see what parameters we have! For today, our job is to implement 
+7 main functions. `calculate_overall_customer_satisfaction`, `calculate_driver_effiency`, `analyse_driver_efficiency`, `analyse_driver_performance`, `calculate_payout`, `calculate_bonus` and `insert_analysis_row`
+Along the way, you can implement any required helper functions as needed (some have been provided already in `database.py`)
+
+## Task 1: Implement 'overall_customer_satisfaction'
+`calculate_overall_custom_satisfaction` should get the average ratings overall rides.
+
+## Task 2: Implement 'calculate_driver_efficiency'
+This function should analyse a driver's overall efficiency based on their average cost/km.
+This value will be stored.
+
+## Task 3: Implement 'analyse_driver_efficiency'
+This function should analyse why these inefficiencies are occuring in the first place. There are three likely reasons that a driver could be inefficient.
+1. They have a poor average cost/km with a specific vehicle (higher than Rs. 3 for 2 wheelers, higher than Rs. 6 for 3 wheelers, higher than Rs. 15 for 4 wheelers)
+2. They are very slow in terms of speed (below 20km/h)
+3. They have faced poor traffic
+You should find which one of these three applies to each driver, and add to a comma-seperated string. This string will eventually be stored. 
+
+## Task 4: Implement 'analyse_driver_performance'
+The average ratings of a driver should be calculated. This will eventually be stored.
+
+## Task 5: Implement 'calculate_payout'
+Will be released soon.
+
+## Task 6: Implement 'insert_analysis_row'
+Will be released soon.
 
 <h2 id="readings" class="!mb-2">Readings</h2>
 <h3 id="general" class="!mb-0 !ml-4">General</h3>
 <div class="child:!mb-0 child:!mt-1 child:!ml-6">
-- [Testing Framework](/sample-guidelines/testing-framework "An overview of the testing framework for the competition")
-{/* - [Web Access](/guidelines/web-access "A list of allowed websites for the competition") */}
 - [Resources](/sample-guidelines/resources "A list of resources for the competition with details about possible libraries for use")
 </div>
 {/*### Algorithm Implementation {.mt-0 .ml-4 .mb-0}
 - [LZW Compression](lzw-compression "An overview of LZW compression")
 - [LZW Decompression](lzw-decompression "An overview of LZW decompression")
 {: .mb-0 .ml-6}*/}
-
-_Please note, this is a shorter sample prompt_

@@ -7,9 +7,7 @@ layout: "../../layouts/MDLayout.astro"
 
 ## Overview
 This month, a B2B company is migrating its CSV files onto a database. These CSV files contain years of oddly formatted data
-that was not standardized. The company understands that doing such a task themselves might impose significant downtime and may not be worth the time 
-taken to do it themselves. They have hired you, along with a team of other developers, to create a stop-gap solution for the time being by using a
-hybrid approach.
+that was not standardized. The company understands that doing such a task themselves might impose significant downtime and may not be worth the time taken to do it themselves. They have hired you, along with a team of other developers, to create a stop-gap solution for the time being by using a hybrid approach.
 
 They plan to expose an API that leverages the CSV files as a database to ensure server uptime remains unaffected during extensive data transfers. Utilizing CSV files conventionally proves highly inefficient since it involves disk-based read/write operations, which are considerably slower. (For further insights, consider examining Amdahl's Law, which essentially underscores that I/O-bound tasks are inherently sequential and challenging to accelerate without hardware modifications.) To address this inefficiency, the plan is to implement a dictionary as an associative cache for vital CSV data, particularly data related to ongoing projects. This dictionary will be stored in memory, thereby enhancing I/O performance for many operations.
 
@@ -17,11 +15,11 @@ They plan to expose an API that leverages the CSV files as a database to ensure 
 ## Understanding the Problem
 Let's take a look at a table visualization of what the data in one of the CSV's looks like:
 <div id="tableCapture" class="hidden md:block">
-| id | date | manager | tasks_csv_path | expected_cost | expected_payment |  ongoing | ... | 
-| --- | ----- | ------------ | -------- | ------------- | ---------------- | ----- | ----- |
-| 43 | 2008-12-13 | Lempel | website.com/assets/csvs/2008-12-13/tasks-43.csv | $32039.93 | $40940.00 | false| |
-| 78 | 2009-02-17 | Welch | website.com/assets/csvs/2008-02-17/tasks-78.csv | $38731.04 | $41500.00 | false |  |
-| 126 | 2023-09-28 | Ziv | website.com/assets/csvs/2023-09-28/tasks-126.csv | $63040.49 | $79000.00 | true | |
+| id  | date       | manager | tasks_csv_path                                   | expected_cost | expected_payment | ongoing | ... |
+| --- | ---------- | ------- | ------------------------------------------------ | ------------- | ---------------- | ------- | --- |
+| 43  | 2008-12-13 | Lempel  | website.com/assets/csvs/2008-12-13/tasks-43.csv  | $32039.93     | $40940.00        | false   |     |
+| 78  | 2009-02-17 | Welch   | website.com/assets/csvs/2008-02-17/tasks-78.csv  | $38731.04     | $41500.00        | false   |     |
+| 126 | 2023-09-28 | Ziv     | website.com/assets/csvs/2023-09-28/tasks-126.csv | $63040.49     | $79000.00        | true    |     |
 </div>
 <div class="block md:hidden my-0 py-0 child:my-0" aria-hidden="true">
 _The table cannot be displayed on screens with less width: please either try flipping your screen or accessing it from Desktop._
@@ -51,7 +49,3 @@ The optimization part of this sample problem is quite basic. It's essentially ju
 {/* - [Web Access](/guidelines/web-access "A list of allowed websites for the competition") */}
 - [Resources](/sample-guidelines/resources "A list of resources for the competition with details about possible libraries for use")
 </div>
-{/*### Algorithm Implementation {.mt-0 .ml-4 .mb-0}
-- [LZW Compression](lzw-compression "An overview of LZW compression")
-- [LZW Decompression](lzw-decompression "An overview of LZW decompression")
-{: .mb-0 .ml-6}*/}
