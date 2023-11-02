@@ -47,7 +47,6 @@ Along the way, you can implement any required helper functions as needed (some h
 This function should analyse a driver's overall efficiency based on their average cost/km.
 This value will be stored.
 
-
 ## Task 3: Implement 'analyse_driver_efficiency'
 This function should analyse why these inefficiencies are occuring in the first place. There are three likely reasons that a driver could be inefficient.
 1. They have a poor average cost/km with a specific vehicle (higher than Rs. 3 for 2 wheelers, higher than Rs. 6 for 3 wheelers, higher than Rs. 15 for 4 wheelers): "HIGHCOST"
@@ -57,8 +56,14 @@ You should find which one of these three applies to each driver, and add to a co
 For eg. if a driver is poor average cost/km and poor traffic then it would be "HIGHCOST,TRAFFIC"
 This string will eventually be stored. 
 
-## Task 4: Implement 'calculate_driver_performance'
-The average ratings of a driver should be calculated. This will eventually be stored.
+## Task 4: Implement 'calculate_driver_loyalty'
+Loyalty is calculated on a scale of 1 to 5: lowest to highest. It is based on number of rides.
+- Less than 200: 1
+- Between 200-300: 2
+- Between 300-400: 3
+- Between 400-500: 4
+- Above 500: 5
+This will eventually be needed to calculate bonuses.
 
 ## Task 5: Implement 'calculate_paycheck'
 Drivers are paid with a base fee of Rs. 50, and an additional Rs. 10 per kilometer driven. Calculate the total paycheck for each driver. This will eventually be stored.
