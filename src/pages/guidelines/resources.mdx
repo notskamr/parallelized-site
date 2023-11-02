@@ -12,6 +12,11 @@ Resources and popular libraries that will help you with development!
 6. [SQLite Cheatsheet](https://www.sqlitetutorial.net/sqlite-cheat-sheet/)
 7. [SQLite Online Viewer](https://sqliteonline.com)
 
+Tips and tricks for optimization:
+- Use numpy wherever possible! It uses C behind the scenes, which isn't slowed down by the [Python GIL](https://realpython.com/python-gil/)
+- Multiprocessing and caching are your best friends - they are integral to doing operations on so many rows (over 600,000)!
+- SQLite is highly optimized with its queries: look into how different queries affect performance
+
 <div class="child:child:no-underline text-lg">
 [&larr; Back](/guidelines "Back to root")
 </div>
