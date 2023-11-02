@@ -85,6 +85,13 @@ CREATE TABLE IF NOT EXISTS driver_analyses (driver_id INTEGER PRIMARY KEY NOT NU
 ```
 Go through the fields in this table. Your function should insert a new row into the SQLite table 'driver_analyses'. Pretty straightforward: just a bit of tying stuff together!
 
+## Tying It All Together (5% Bonus Score)
+You've made all these functions. Now it's time to tie it all together! In 'main.py', correctly insert a row with all the required fields (you just made a function to help you with this!) for every single driver.
+Take a look at the 'drivers' table and make sure that there is a row for all the drivers (check the row counts).
+
+# Time to Optimize!
+Optimize what you've done so far as well as you can!
+
 ## Time Yourself
 You can time yourself and your implementations with the in-built Python library `time`. Here's an example that times calculate_bonus for a certain driver.
 ```python
@@ -113,7 +120,7 @@ print(f"CPU Time taken: {end_cpu_time - start_cpu_time}")
 ```
 
 ## Scoring
-Implementations are based on functionality and speed. You are graded with a 50% weightage toward successful implementations and a 50% weightage towards speedup over a naive staff implementation.
+Implementations are based on functionality and speed. You are graded with a 50% weightage toward successful implementations, a 50% weightage towards speedup over a naive staff implementation, and a 5% weightage towards tying it all together!
 
 <h2 id="readings" class="!mb-2">Readings</h2>
 <div class="child:!mb-0 child:!mt-1 child:!ml-6">
