@@ -49,7 +49,7 @@ This value will be stored.
 
 ## Task 3: Implement 'analyse_driver_efficiency'
 This function should analyze why these inefficiencies are occurring in the first place. There are three likely reasons that a driver could be inefficient.
-1. They have a poor average cost/km with a specific vehicle (higher than Rs. 3 for 2-wheelers, higher than Rs. 6 for 3-wheelers, higher than Rs. 15 for 4-wheelers): "HIGHCOST"
+1. They have a poor average cost/km with a specific vehicle (higher than Rs. 2.7 for 2-wheelers, higher than Rs. 3.6 for 3-wheelers, higher than Rs. 15 for 4-wheelers, and higher than Rs. 8 for other): "HIGHCOST"
 2. They are very slow in terms of average speed across all rides (below 20km/h): "SLOW"
 3. They have faced poor traffic (the majority of their rides are 'POOR' or 'VPOOR' - consider a 50/50 split poor): "TRAFFIC"
 You should find which one of these three applies to each driver, and add to a comma-separated string.
@@ -73,10 +73,15 @@ This will eventually be needed to calculate bonuses.
 Drivers are paid with a base fee of Rs. 50 with Rs. 10 per kilometer driven and Rs. 5 per minute driven. Calculate the total paycheck for each driver. This will eventually be stored.
 
 ## Task 7: Implement 'calculate_bonus'
-Will be released soon.
+An additional bonus is given as a portion of their total costs for the quarter (up to a limit of 65% of their costs). It is calculated as per their loyalty, performance, and efficiency.
+1. Loyalty to the percentage of cost added to total bonus &rarr; 5: 30%, 4: 20%, 3: 15%, 2: 2.5%, 1: 0% (Eg. a loyalty of 5 with a total cost of Rs. 1200 means that Rs. 360 is added as a bonus)
+2. Performance &rarr; >=4.5: 20%, >=3: 10%, Else: None
+3. Efficiency &rarr; if 'SLOW' or 'HIGHCOST' are in their analysis, then there is no bonus given. If no inefficiencies, 10% bonus. If there is only high traffic, 5% bonus.
 
 ## Task 8: Implement 'insert_analysis_row'
 Will be released soon.
+
+{/* ## Time Yourself */}
 
 ## Scoring
 Implementations are based on functionality and speed. You are graded with a 50% weightage toward successful implementations and a 50% weightage towards speedup over a naive staff implementation.
