@@ -22,10 +22,10 @@ const { frontmatter } = Astro.props;
 </style>
 <Layout
   title={frontmatter.title}
-  bodyClass="overflow-x-hidden min-h-screen flex flex-col max-w-full"
+  bodyClass="overflow-x-hidden min-h-screen flex flex-col"
 >
   <div
-    class="font-mono dark:bg-gray-900 transition-colors duration-500 min-w-screen supports-[width:1dvw]:w-[100dvw] flex justify-items-center items-center flex-col px-2 p-4 xs:px-8 xs:p-8 print:p-0"
+    class="font-mono dark:bg-gray-900 transition-colors duration-500 min-w-screen supports-[width:1dvw]:min-w-[100dvw] supports-[width:1dvw]:w-[100dvw] max-w-screen supports-[width:1dvw]:max-w-[100dvw] flex justify-items-center items-center flex-col px-2 p-4 xs:px-8 xs:p-8 print:p-0"
   >
     <a
       class="text-black dark:noprint:text-white flex flex-col items-center justify-center hover:-translate-y-1
@@ -43,7 +43,7 @@ const { frontmatter } = Astro.props;
       >
     </a>
     <div
-      class="w-[100%] !max-w-[800px] print:w-full print:max-w-none prose prose-h2:mt-2 prose-h2:mb-2 dark:noprint:prose-invert transition-colors duration-500
+      class="w-full !max-w-[800px] print:w-full print:max-w-none prose prose-h2:mt-2 prose-h2:mb-2 dark:noprint:prose-invert transition-colors duration-500
                 flex flex-col"
     >
       <slot />
