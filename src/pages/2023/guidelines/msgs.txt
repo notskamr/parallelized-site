@@ -1,7 +1,0 @@
-Rider data, one by one.
-Trying to find the most expensive or inefficient drivers with costs per mile.
-Average inefficiencies for the last 10 days.
-Reasons for driver inefficiencies.
-Maybe link it to an ai model that automates sickness and payouts
-
-We're deciding which drivers to give bonuses to this quarter. We have all this data and...

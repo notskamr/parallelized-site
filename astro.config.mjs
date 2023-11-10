@@ -18,6 +18,6 @@ export default defineConfig({
   output: "hybrid",
   adapter: vercel(),
   markdown: {
-    remarkPlugins: [remarkToc],
+    remarkPlugins: [() => { return remarkToc({ skip: "Results" }) }],
   },
 });
