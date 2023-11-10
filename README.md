@@ -5,18 +5,15 @@ Welcome to the official repository for 'Parallelized' - a code optimization and 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
+- [Stuff](#stuff)
 - [Getting Started](#getting-started)
 - [Dependencies](#dependencies)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
 The Parallelized site serves as the place for all competition-related information, guidelines and resources. It is designed to be simple yet effective in what it needs to do (but still look somewhat good!).
 
-## Features
+## Stuff
 
 - **Responsive Design:** The site is mostly responsive 😭
 - **Flex :** Makes use of flexbox (mostly.. margins have been used sometimes)
