@@ -65,6 +65,7 @@ import Icon from "astro-icon";
       >
       <a
         href="/guidelines"
+        title="Parallelized guidelines for 2023"
         class="!no-underline text-sm md:text-base px-4 py-2 flex justify-center items-center text-center w-[140px] bg-[#f39cfd] dark:bg-[#ff8a4b] transition-all duration-500
         hover:scale-105 hover:saturate-150 hover:-translate-y-1 justify-self-end"
       >
@@ -87,26 +88,26 @@ import Icon from "astro-icon";
     </footer>
   </div>
   <script is:inline>
-  function initThemeToggle() {
-    const toggle = document.querySelector(".theme-toggle");
-    if (localStorage.getItem("theme") === "light") {
-      toggle.checked = true;
-      toggle.setAttribute("aria-checked", "true");
-    } else {
-      toggle.checked = false;
-      toggle.setAttribute("aria-checked", "false");
+    function initThemeToggle() {
+      const toggle = document.querySelector(".theme-toggle");
+      if (localStorage.getItem("theme") === "light") {
+        toggle.checked = true;
+        toggle.setAttribute("aria-checked", "true");
+      } else {
+        toggle.checked = false;
+        toggle.setAttribute("aria-checked", "false");
+      }
+      toggle.onclick = (e) => {
+        let newTheme =
+          localStorage.getItem("theme") === "light" ? "dark" : "light";
+        localStorage.setItem("theme", newTheme);
+        toggle.setAttribute("aria-checked", newTheme);
+        document.documentElement.classList.toggle("dark");
+      };
     }
-    toggle.onclick = (e) => {
-      let newTheme =
-        localStorage.getItem("theme") === "light" ? "dark" : "light";
-      localStorage.setItem("theme", newTheme);
-      toggle.setAttribute("aria-checked", newTheme);
-      document.documentElement.classList.toggle("dark");
-    };
-  }
-  document.addEventListener("astro:page-load", initThemeToggle, {
-    once: true,
-  });
+    document.addEventListener("astro:page-load", initThemeToggle, {
+      once: true,
+    });
   </script>
   <style></style>
 </Layout>
