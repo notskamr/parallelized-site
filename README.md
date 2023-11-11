@@ -16,7 +16,7 @@ The Parallelized site serves as the place for all competition-related informatio
 ## Stuff
 
 - **Responsive Design:** The site is mostly responsive 😭
-- **Flex :** Makes use of flexbox (mostly.. margins have been used sometimes)
+- **Flex:** Makes use of flexbox (mostly.. margins have been used sometimes)
 - **Markdown Support:** All content pages are markdown-based.
 
 ## Getting Started
