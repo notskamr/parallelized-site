@@ -43,5 +43,6 @@ To get started with the Parallelized repository, follow these steps:
 
 - [Astro](https://astro.build/): The framework used for building this repository.
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework used for styling.
-- [Remark](https://github.com/remarkjs/remark): Remark and some plugins are used to make Markdown more better (table of contents)
+- [Remark](https://github.com/remarkjs/remark): A remark plugins, remark-toc, is used on site pages to auto-generate TOCs
+- [Firebase](https://firebase.google.com): Firebase Analytics is used
 - [MDX](https://mdxjs.com): MDX expands on markdown in many helpful ways
