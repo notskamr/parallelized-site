@@ -20,5 +20,8 @@ module.exports = {
       addVariant("child", "& > *");
       addVariant("child-hover", "& > *:hover");
     },
+    function ({ addVariant }) {
+      addVariant("supports-dynamic", "@supports (width: 1dvw)");
+    },
   ],
 };

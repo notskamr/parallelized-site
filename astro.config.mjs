@@ -15,6 +15,9 @@ export default defineConfig({
     }),
     mdx(),
   ],
+  build: {
+    redirects: false,
+  },
   output: "hybrid",
   adapter: vercel(),
   markdown: {

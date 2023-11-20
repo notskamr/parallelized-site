@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+export const prerender = false;
+---
+
+<Layout title="404 - parallelized">
+  <div
+    class="w-full h-screen supports-dynamic:h-[100dvh] flex flex-col items-center justify-center dark:text-white"
+  >
+    <img
+      src="/parallelized-small.svg"
+      class="invert dark:invert-0"
+      width="60"
+      height="60"
+    />
+    <h1 class="text-3xl font-semibold mt-5">Page could not be found!</h1>
+    <a
+      class="text-blue-500 dark:text-orange-500 text-xl underline underline-offset-2 mt-2"
+      href="/">Return to home</a
+    >
+  </div>
+</Layout>
