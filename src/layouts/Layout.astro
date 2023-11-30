@@ -18,6 +18,7 @@ const { title, bodyClass = "" } = Astro.props;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -31,22 +32,22 @@ const { title, bodyClass = "" } = Astro.props;
       as="style"
     />
     <script is:inline>
-    function setTheme() {
-      localStorage.setItem(
-        "theme",
-        localStorage.getItem("theme")
-          ? localStorage.getItem("theme")
-          : window.matchMedia("(prefers-color-scheme: dark)").matches
+      function setTheme() {
+        localStorage.setItem(
+          "theme",
+          localStorage.getItem("theme")
+            ? localStorage.getItem("theme")
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
             : "light"
-      );
-      localStorage.getItem("theme") !== "dark" &&
-        document.documentElement.classList.remove("dark");
-    }
-    setTheme();
-    document.addEventListener("astro:after-swap", () => {
+        );
+        localStorage.getItem("theme") !== "dark" &&
+          document.documentElement.classList.remove("dark");
+      }
       setTheme();
-    });
+      document.addEventListener("astro:after-swap", () => {
+        setTheme();
+      });
     </script>
 
     <title>{title}</title>
@@ -60,13 +61,13 @@ const { title, bodyClass = "" } = Astro.props;
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-BDHE6RR412"></script>
     <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag("config", "G-BDHE6RR412");
+      gtag("config", "G-BDHE6RR412");
     </script>
   </head>
   <!-- Google tag (gtag.js) -->
