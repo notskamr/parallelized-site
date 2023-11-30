@@ -25,5 +25,11 @@ export default defineConfig({
         skip: "Results"
       });
     }]
+  },
+  redirects: {
+    "/guidelines": {
+      destination: "/2023/guidelines",
+      status: 301
+    }
   }
 });
