@@ -32,7 +32,7 @@ const { title, bodyClass = "" } = Astro.props;
       as="style"
     />
     <script is:inline>
-      function setTheme() {
+      function setTheme(document) {
         localStorage.setItem(
           "theme",
           localStorage.getItem("theme")
@@ -44,9 +44,9 @@ const { title, bodyClass = "" } = Astro.props;
         localStorage.getItem("theme") !== "dark" &&
           document.documentElement.classList.remove("dark");
       }
-      setTheme();
-      document.addEventListener("astro:after-swap", () => {
-        setTheme();
+      setTheme(document);
+      document.addEventListener("astro:before-swap", (ev) => {
+        setTheme(ev.newDocument);
       });
     </script>
 
