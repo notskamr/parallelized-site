@@ -100,9 +100,7 @@ import Icon from "astro-icon";
         document.documentElement.classList.toggle("dark");
       };
     }
-    document.addEventListener("astro:page-load", initThemeToggle, {
-      once: true,
-    });
+    document.addEventListener("astro:page-load", initThemeToggle);
   </script>
   <style></style>
 </Layout>
