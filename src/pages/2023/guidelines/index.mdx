@@ -7,18 +7,18 @@ layout: "../../../layouts/MDLayout.astro"
 
 
 ## Results
-**Parallelized 2023 is over!** See the [results!](/2023/results 'Results for Parallelized 2023')
+**Parallelized 2023 has ended!** See the [results!](/2023/results 'Results for Parallelized 2023')
 
 
 ## Overview
-You work for a thriving ride-sharing company that connects hundreds of drivers with passengers daily. As part of your role, you need to determine which drivers deserve bonuses based on their performance over the last quarter. To make data-driven decisions in regards to the situation, you need to assess driver efficiency and pinpoint reasons for inefficiencies. Additionally, you want to incorporate a way to automate payout calculations that include bonuses for drivers doing well (in terms of efficiency and ratings). Lastly, you've been asked to find the overall customer satisfaction (average overall ratings across all rides), and which drivers are negative outliers in this regard (very low average ratings).
+You work for a thriving ride-sharing company that connects hundreds of drivers with passengers daily. As part of your role, you need to determine which drivers deserve bonuses based on their performance over the last quarter. To make data-driven decisions regarding the situation, you need to assess driver efficiency and pinpoint reasons for inefficiencies. Additionally, you want to incorporate a way to automate payout calculations that include bonuses for drivers doing well (in terms of efficiency and ratings). Lastly, you've been asked to determine the overall customer satisfaction (average overall ratings across all rides) and identify which drivers are negative outliers in this regard (those with very low average ratings).
 
 ## Getting Started
 Please fork this repository: https://github.com/parallelized/parallelized-2023-starter.
 Here's a helpful link to work with Git: [Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
 ## Understanding the Problem
-Let's take a look at our file structure!
+Let's examine our file structure!
 ```bash
 parallelized-starter/
 │
@@ -41,7 +41,7 @@ The SQLite database has two tables: `drivers` and `rides`. Let's go through a fe
 2. `rides`
 ![Rides](/guidelines/assets/rides.png)
 
-Please take a look through the columns of both tables and see what parameters we have! For today, our job is to implement 
+Please examine the columns of both tables to understand the parameters we have. For today, our job is to implement 
 8 main functions. `calculate_overall_customer_satisfaction`, `calculate_driver_effiency`, `analyse_driver_efficiency`, `calculate_driver_performance`, `calculate_driver_loyalty`, `calculate_payout`, `calculate_bonus` and `insert_analysis_row`
 Along the way, you can implement any required helper functions as needed (some have been provided already in `database.py`)
 
@@ -62,7 +62,7 @@ For eg. if a driver is poor average cost/km and poor traffic then it would be "H
 This string will eventually be stored. 
 
 ## Task 4: Implement 'calculate_driver_performance'
-The average ratings of a driver should be calculated. This will eventually be needed to calculate bonuses.
+The average ratings of a driver should be calculated. This will be needed eventually to calculate bonuses.
 
 ## Task 5: Implement 'calculate_driver_loyalty'
 Loyalty is calculated on a scale of 1 to 5: lowest to highest. It is based on the number of rides.
@@ -78,7 +78,7 @@ This will eventually be needed to calculate bonuses.
 Drivers are paid with a base fee of Rs. 50 with Rs. 10 per kilometer driven and Rs. 5 per minute driven. Calculate the total paycheck for each driver. This will eventually be stored.
 
 ## Task 7: Implement 'calculate_bonus'
-An additional bonus is given as a portion of their total costs for the quarter (up to a limit of 65% of their costs). The function should return the bonus value in rupees. It is calculated as per their loyalty, performance, and efficiency.
+An additional bonus, up to a limit of 65% of their total costs for the quarter, is given. The function should return the bonus value in rupees. It is calculated as per their loyalty, performance, and efficiency.
 1. Loyalty to the percentage of cost added to total bonus &rarr; 5: 30%, 4: 20%, 3: 15%, 2: 2.5%, 1: 0% (Eg. a loyalty of 5 with a total cost of Rs. 1200 means that Rs. 360 is added as a bonus)
 2. Performance &rarr; >=4.5: 20%, >=3: 10%, Else: None
 3. Efficiency &rarr; if 'SLOW' or 'HIGHCOST' are in their analysis, then there is no bonus given. If no inefficiencies, 10% bonus. If there is only high traffic, a 5% bonus.
@@ -88,17 +88,17 @@ Let's take a look at the below snippet from the table schematic for 'driver_anal
 ```sql
 CREATE TABLE IF NOT EXISTS driver_analyses (driver_id INTEGER PRIMARY KEY NOT NULL, averageSpeed REAL NOT NULL, inefficiencyReason TEXT, payout REAL NOT NULL, bonus REAL NOT NULL);
 ```
-Go through the fields in this table. Your function should insert a new row into the SQLite table 'driver_analyses'. Pretty straightforward: just a bit of tying stuff together!
+Examine the fields in this table. Your function should insert a new row into the SQLite table 'driver_analyses'. Pretty straightforward: just a bit of tying stuff together!
 
 ## Tying It All Together (5% Bonus Score)
-You've made all these functions. Now it's time to tie it all together! In 'main.py', correctly insert a row with all the required fields (you just made a function to help you with this!) for every single driver.
+You've created all these functions. Now it's time to tie it all together! In 'main.py', correctly insert a row with all the required fields (you just made a function to help you with this!) for every single driver.
 Take a look at the 'drivers' table and make sure that there is a row for all the drivers (check the row counts).
 
 ## Time to Optimize!
 Optimize what you've done so far as well as you can!
 
 ## Time Yourself
-You can time yourself and your implementations with the in-built Python library `time`. Here's an example that times calculate_bonus for a certain driver.
+You can time your implementations using the built-in Python library `time`. Here's an example that times calculate_bonus for a certain driver.
 ```python
 # Let's assume that your implementation of calculate_bonus takes in a driver_id as its only argument, we can time it as below.
 
@@ -128,7 +128,7 @@ print(f"CPU Time taken: {end_cpu_time - start_cpu_time}")
 Please send submissions as ZIP files using [WeTransfer](https://wetransfer.com) to varun@parallelized.in
 
 ## Scoring
-Implementations are based on functionality and speed. You are graded with a 50% weightage toward successful implementations, a 50% weightage towards speedup over a naive staff implementation, and a 5% bonus weightage towards tying it all together!
+Evaluations are based on functionality and speed. Your grade consists of 50% for successful implementations, 50% for speed improvement over a naive staff implementation, and a 5% bonus for integrating everything together!
 
 <h2 id="readings" class="!mb-2">Readings</h2>
 <div class="child:!mb-0 child:!mt-1 child:!ml-6">
