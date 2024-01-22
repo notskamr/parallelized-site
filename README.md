@@ -37,7 +37,7 @@ To get started with the Parallelized repository, follow these steps:
    npm run dev
    ```
 
-5. **Visit the Site:**
+5. **Visit the Site - default url: `localhost:4321`**
 
 ## Dependencies
 
