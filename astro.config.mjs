@@ -15,7 +15,7 @@ export default defineConfig({
     applyBaseStyles: false
   }), mdx(), sitemap()],
   build: {
-    redirects: false
+    redirects: false,
   },
   output: "hybrid",
   adapter: vercel(),
@@ -31,5 +31,5 @@ export default defineConfig({
       destination: "/2023/guidelines",
       status: 301
     }
-  }
+  },
 });

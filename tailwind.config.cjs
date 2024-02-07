@@ -12,6 +12,7 @@ module.exports = {
     },
     fontFamily: {
       mono: ["Fira Code", "monospace"],
+      sans: ["Epilogue", "system-ui", "sans-serif"],
     },
   },
   plugins: [
