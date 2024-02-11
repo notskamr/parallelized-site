@@ -25,7 +25,7 @@ const { frontmatter } = Astro.props;
   bodyClass="overflow-x-hidden min-h-screen flex flex-col"
 >
   <div
-    class="font-mono dark:bg-gray-900 transition-colors duration-500 min-w-screen overflow-x-scroll supports-[width:1dvw]:min-w-[100dvw] supports-[width:1dvw]:w-[100dvw] max-w-screen supports-[width:1dvw]:max-w-[100dvw] flex justify-items-center items-center flex-col px-2 p-4 xs:px-8 xs:p-8 print:p-0"
+    class="font-mono dark:bg-gray-900 transition-colors duration-500 min-w-screen overflow-x-auto supports-[width:1dvw]:min-w-[100dvw] supports-[width:1dvw]:w-[100dvw] max-w-screen supports-[width:1dvw]:max-w-[100dvw] flex justify-items-center items-center flex-col px-2 p-4 xs:px-8 xs:p-8 print:p-0"
   >
     <a
       class="text-black dark:noprint:text-white flex flex-col items-center justify-center hover:-translate-y-1
@@ -42,12 +42,11 @@ const { frontmatter } = Astro.props;
         >return to home</span
       >
     </a>
-    <div
-      class="w-full !font-sans prose-headings:font-mono !max-w-[800px] print:w-full print:max-w-none prose prose-h2:mt-2 prose-h2:mb-2 dark:noprint:prose-invert transition-colors duration-500
-                flex flex-col"
+    <main
+      class="w-full !font-sans prose-headings:font-mono !max-w-[800px] print:w-full print:max-w-none prose prose-h2:mt-2 prose-h2:mb-2 prose-p:mb-1 prose-pre:my-1 dark:noprint:prose-invert transition-colors duration-500 flex flex-col"
     >
       <slot />
-    </div>
+    </main>
   </div>
   <footer
     class="mt-auto mb-1 mx-auto text-center prose print:hidden dark:prose-invert opacity-50"

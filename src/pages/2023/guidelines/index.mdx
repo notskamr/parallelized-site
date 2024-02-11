@@ -42,18 +42,18 @@ The SQLite database has two tables: `drivers` and `rides`. Let's go through a fe
 ![Rides](/guidelines/assets/rides.png)
 
 Please examine the columns of both tables to understand the parameters we have. For today, our job is to implement 
-8 main functions. `calculate_overall_customer_satisfaction`, `calculate_driver_effiency`, `analyse_driver_efficiency`, `calculate_driver_performance`, `calculate_driver_loyalty`, `calculate_payout`, `calculate_bonus` and `insert_analysis_row`
+8 main functions. `calculate_overall_customer_satisfaction`, `calculate_driver_effiency`, `analyse_driver_efficiency`, `calculate_driver_performance`, `calculate_driver_loyalty`, `calculate_paycheck`, `calculate_bonus` and `insert_analysis_row`
 Along the way, you can implement any required helper functions as needed (some have been provided already in `database.py`)
 
-## Task 1: Implement 'calculate_overall_customer_satisfaction'
-`calculate_overall_custom_satisfaction` should get the average ratings overall rides for all drivers (average of ratings in the 'rides' table).
+## Task 1: Calculating Overall Customer Satisfaction
+Implement a function `calculate_overall_custom_satisfaction`: should get the average ratings overall rides for all drivers (average of ratings in the 'rides' table).
 
-## Task 2: Implement 'calculate_driver_efficiency'
-This function should analyze a driver's overall efficiency based on their average cost/km.
+## Task 2: Calculating Driver Efficiency
+Implement a function `calculate_driver_effiency`: should analyze a driver's overall efficiency based on their average cost/km.
 This value will be stored.
 
-## Task 3: Implement 'analyse_driver_efficiency'
-This function should analyze why these inefficiencies are occurring in the first place. There are three likely reasons that a driver could be inefficient.
+## Task 3: Analyse Driver Efficiency
+Implement a function `analyse_driver_efficiency`: should analyze why these inefficiencies are occurring in the first place. There are three likely reasons that a driver could be inefficient.
 1. They have a poor average cost/km with a specific vehicle (higher than Rs. 2.7 for 2-wheelers, higher than Rs. 3.6 for 3-wheelers, higher than Rs. 15 for 4-wheelers, and higher than Rs. 8 for other): "HIGHCOST"
 2. They are very slow in terms of average speed across all rides (below 20km/h): "SLOW"
 3. They have faced poor traffic (the majority of their rides are 'POOR' or 'VPOOR' - consider a 50/50 split poor): "TRAFFIC"
@@ -61,10 +61,11 @@ You should find which one of these three applies to each driver, and add to a co
 For eg. if a driver is poor average cost/km and poor traffic then it would be "HIGHCOST,TRAFFIC"
 This string will eventually be stored. 
 
-## Task 4: Implement 'calculate_driver_performance'
-The average ratings of a driver should be calculated. This will be needed eventually to calculate bonuses.
+## Task 4: Calculate Driver Performance
+Implement a function `calculate_driver_performance` which should compute the average ratings of a driver. This will be needed eventually to calculate bonuses.
 
-## Task 5: Implement 'calculate_driver_loyalty'
+## Task 5: Calculate Driver Loyalty
+Implement a function `calculate_driver_loyalty` which should calculate the loyalty of a driver as follows:
 Loyalty is calculated on a scale of 1 to 5: lowest to highest. It is based on the number of rides.
 - Less than 200: 1
 - Between 200-300: 2
@@ -74,10 +75,12 @@ Loyalty is calculated on a scale of 1 to 5: lowest to highest. It is based on th
 
 This will eventually be needed to calculate bonuses.
 
-## Task 6: Implement 'calculate_paycheck'
+## Task 6: Calculate Paycheck for Drivers
+Implement a function `calculate_paycheck` which should calculate the total paycheck for each driver.
 Drivers are paid with a base fee of Rs. 50 with Rs. 10 per kilometer driven and Rs. 5 per minute driven. Calculate the total paycheck for each driver. This will eventually be stored.
 
-## Task 7: Implement 'calculate_bonus'
+## Task 7: Calculate Bonus for Drivers
+Implement a function `calculate_bonus` which should calculate the bonus for each driver.
 An additional bonus, up to a limit of 65% of their total costs for the quarter, is given. The function should return the bonus value in rupees. It is calculated as per their loyalty, performance, and efficiency.
 1. Loyalty to the percentage of cost added to total bonus &rarr; 5: 30%, 4: 20%, 3: 15%, 2: 2.5%, 1: 0% (Eg. a loyalty of 5 with a total cost of Rs. 1200 means that Rs. 360 is added as a bonus)
 2. Performance &rarr; >=4.5: 20%, >=3: 10%, Else: None
