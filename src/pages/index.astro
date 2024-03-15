@@ -27,8 +27,11 @@ import Icon from "astro-icon";
     class="min-w-[100dvw] min-h-[87dvh] flex flex-col justify-center items-center prose dark:noprint:prose-invert"
   >
     <!-- Oh hey there! Welcome to the code. I'm quite proud of this dark/light theme toggle you see below: purely CSS
-  based for all the animations and stuff - and it's very simple! Just a few translations. -->
-    <button
+  based for all the animations and stuff - and it's very simple! Just a few translations. 
+  UPDATE: I've removed the theme toggle for now, because it's not really necessary - media queries ftw!
+-->
+    {
+      /* <button
       type="button"
       role="switch"
       aria-label="Toggle Theme"
@@ -45,7 +48,8 @@ import Icon from "astro-icon";
           <Icon name="ic:outline-light-mode" />
         </div>
       </div>
-    </button>
+    </button>*/
+    }
     <div
       class="text-black dark:text-white text-[min(11vw,4.5rem)] text-center font-medium mb-[2vh] mt-[1.5vh] duration-500"
     >
@@ -88,7 +92,8 @@ import Icon from "astro-icon";
       <FooterInner />
     </footer>
   </div>
-  <script>
+  {
+    /*<script>
     function initThemeToggle() {
       const toggle = document.querySelector(
         ".theme-toggle"
@@ -102,6 +107,7 @@ import Icon from "astro-icon";
       };
     }
     document.addEventListener("astro:page-load", initThemeToggle);
-  </script>
+  </script> */
+  }
   <style></style>
 </Layout>
