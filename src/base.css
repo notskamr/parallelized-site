@@ -3,17 +3,9 @@
 @tailwind components;
 
 ::selection {
-  background: rgb(246, 156, 91) !important;
-}
-
-.dark ::selection {
-  background: rgb(159, 8, 71) !important;
+  @apply dark:![background:rgb(159,8,71)] ![background:rgb(246,156,91)];
 }
 
 ::-moz-selection {
-  background: rgb(246, 156, 91) !important;
-}
-
-.dark ::-moz-selection {
-  background: rgb(159, 8, 71) !important;
+  @apply dark:![background:rgb(159,8,71)] ![background:rgb(246,156,91)];
 }
